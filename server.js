@@ -20,6 +20,7 @@ module.exports = {
     }
     User.findOne(function(err, inputUser){
       if(err) console.error(err);
+      console.log(inputUser);
     })
     if(inputUser.username == obj.username){
       return false;

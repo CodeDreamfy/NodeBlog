@@ -9,6 +9,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var mongoose = require('mongoose');
 
+
 var session = require('express-session');
 mongoose.connect(config.mongodb);
 var db = mongoose.connection;
@@ -17,7 +18,14 @@ db.once('open', function() {
   console.log('db open success');
 });
 var app = express();
+//socket.IO
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
+//socket链接
+io.on('connection', function( socket ){
+  socket.emit('news', { hello: 'world'})
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -76,6 +84,6 @@ if (app.get('env') === 'development') {
 //   });
 // });
 
-app.listen(3000,function(){
+server.listen(3000,function(){
   console.log('listening in port 3000')
 })

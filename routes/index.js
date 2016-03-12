@@ -9,12 +9,13 @@ module.exports = function(app,db) {
     res.render('reg', { title: '注册', tips: ''})
   });
   app.post('/reg', function( req, res){
-    var falg = server.reg(req,res);
-    if(falg){
-      res.render('login', { title: '登录'})
-    }else {
-      res.render('reg', { title: '注册' ,tips: '存在错误'})
-    }
+    // var falg = server.reg(req,res);
+    // if(falg){
+    //   res.render('login', { title: '登录'})
+    // }else {
+    //   res.render('reg', { title: '注册' ,tips: '存在错误'})
+    // }
+    res.render('reg', { title: '注册' ,tips: ''})
   });
 
   app.get('/login', function( req, res){
