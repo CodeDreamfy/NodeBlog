@@ -20,12 +20,12 @@ db.once('open', function() {
 var app = express();
 //socket.IO
 var server = require('http').Server(app);
-var io = require('socket.io')(server);
+// var io = require('socket.io')(server);
 
 //socket链接
-io.on('connection', function( socket ){
-  socket.emit('news', { hello: 'world'})
-})
+// io.on('connection', function( socket ){
+//   socket.emit('news', { hello: 'world'})
+// })
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

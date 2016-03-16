@@ -3,7 +3,7 @@ var server = require('../server');
 
 module.exports = function(app,db) {
   app.get('/', function(req, res) {
-    res.render('index', { title: '主页'});
+    res.render('index', { title: '主页',});
   });
   app.get('/reg', function(req, res) {
     res.render('reg', { title: '注册', tips: ''})
@@ -33,4 +33,5 @@ module.exports = function(app,db) {
   app.get('/logout', function( req, res){
 
   });
+
 }
